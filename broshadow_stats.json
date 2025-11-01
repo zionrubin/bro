@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T16:45:10.870Z",
-  "commits": 17,
+  "since": "2025-10-02T18:35:01.141Z",
+  "commits": 18,
   "changes": {
-    "added": 192628,
-    "modified": 193,
+    "added": 193118,
+    "modified": 244,
     "removed": 19044
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "2d652c9f4d61a3d8341b0bf37506a66f4e2973e4",
-    "message": "feat: implement database client and queries for user workspaces and channels",
+    "sha": "68cc989cd102c27797e7863dcf58b002b0452758",
+    "message": "feat: add MCP server support for data access and update configuration options",
     "author": "zr",
-    "date": "2025-11-01T18:44:59+02:00"
+    "date": "2025-11-01T20:32:59+02:00"
   },
-  "summary": "17 commits across 2 contributors in the last 30 days"
+  "summary": "18 commits across 2 contributors in the last 30 days"
 }
