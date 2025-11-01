@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bro — Coming Soon</title>
+    <meta name="description" content="Bro is cooking. Live stats are pulled from a sibling JSON file exported from the private repo (broshadow)." />
+    <meta name="color-scheme" content="dark light" />
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --fg: #eaeaea;
+        --muted: #9a9a9a;
+        --card: rgba(255,255,255,0.06);
+        --stroke: rgba(255,255,255,0.12);
+        --accent: #b3e4ff;
+      }
+      @media (prefers-color-scheme: light) {
+        :root { --bg: #f7f7f7; --fg: #0b0b0b; --muted: #5b5b5b; --card: rgba(0,0,0,0.06); --stroke: rgba(0,0,0,0.12); --accent: #0058ff; }
+      }
+      html, body { height: 100%; }
+      body {
+        margin: 0; background: radial-gradient(1200px 1200px at 80% -10%, rgba(75, 135, 255, 0.20), transparent 45%),
+                                   radial-gradient(800px 800px at -10% 110%, rgba(56, 217, 169, 0.20), transparent 50%),
+                                   var(--bg);
+        color: var(--fg); font: 400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+        display: grid; place-items: center; padding: 24px; overflow-x: hidden;
+      }
+
+      .wrap { position: relative; width: min(980px, 92vw); }
+
+      .orb {
+        position: absolute; inset: -120px -120px auto auto; width: 280px; aspect-ratio: 1; border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.15) 45%, rgba(255,255,255,0.0) 65%),
+                    radial-gradient(circle at 65% 65%, rgba(179, 228, 255, 0.9), rgba(179, 228, 255, 0.1) 60%, transparent 72%);
+        filter: blur(0.2px) saturate(110%);
+        box-shadow: 0 30px 120px rgba(179,228,255,0.35), inset 0 -10px 40px rgba(0,0,0,0.25);
+        animation: float 9s ease-in-out infinite;
+        pointer-events: none; opacity: .85;
+      }
+      @keyframes float { 0%, 100% { transform: translateY(0px) } 50% { transform: translateY(-18px) } }
+
+      .card {
+        backdrop-filter: saturate(140%) blur(6px);
+        background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        border: 1px solid var(--stroke);
+        border-radius: 24px; padding: 28px; position: relative; overflow: hidden;
+      }
+
+      .header { display: flex; align-items: center; gap: 14px; }
+      .logo {
+        --s: 42px; width: var(--s); height: var(--s); border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #fff, rgba(255,255,255,0.35) 48%, rgba(255,255,255,0.05) 70%),
+                    conic-gradient(from 200deg, rgba(179,228,255,0.95), rgba(179,228,255,0.2), rgba(56,217,169,0.35), rgba(179,228,255,0.95));
+        border: 1px solid var(--stroke);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25), 0 12px 40px rgba(0,0,0,0.25);
+      }
+      h1 { font-size: clamp(28px, 4vw, 40px); margin: 0; letter-spacing: 0.4px; }
+      .tag { font-size: 13px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase }
+
+      .hero { margin-top: 18px; }
+      .title { font-size: clamp(38px, 7vw, 64px); line-height: 1.05; margin: 8px 0 4px; font-weight: 650; }
+      .subtitle { color: var(--muted); font-size: clamp(16px, 2.4vw, 18px); margin: 0; }
+
+      .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+      @media (max-width: 740px) { .stats { grid-template-columns: 1fr; } }
+
+      .stat { background: var(--card); border: 1px solid var(--stroke); border-radius: 18px; padding: 18px; }
+      .label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+      .value { font-variant-numeric: tabular-nums; font-size: clamp(28px, 5vw, 40px); font-weight: 700; margin-top: 6px; }
+      .meta { color: var(--muted); font-size: 14px; margin-top: 8px; }
+
+      .commit {
+        margin-top: 16px; background: var(--card); border: 1px solid var(--stroke); border-radius: 18px; padding: 16px;
+      }
+      .commit b { font-weight: 600 }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .muted { color: var(--muted) }
+
+      .footer { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 22px; flex-wrap: wrap }
+      .pill {
+        display: inline-flex; gap: 8px; align-items: center; border: 1px solid var(--stroke); border-radius: 999px; padding: 10px 14px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      }
+      .link { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--accent); box-shadow: 0 -2px 0 inset var(--accent); padding-bottom: 1px }
+      .blink { animation: pulse 1.8s ease-in-out infinite; }
+      @keyframes pulse { 0%,100%{opacity:.45} 50%{opacity:1} }
+
+      .noise { position: absolute; inset: 0; pointer-events: none; opacity: .04; mix-blend-mode: overlay; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22240%22 height=%22240%22 viewBox=%220 0 240 240%22><filter id=%22n%22 x=%220%22 y=%220%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22240%22 height=%22240%22 filter=%22url(%23n)%22 opacity=%220.42%22/></svg>'); }
+
+      .ribbon { position: absolute; right: 12px; top: -12px; rotate: 3deg; background: #121212; border: 1px solid var(--stroke); color: var(--fg); padding: 6px 10px; border-radius: 10px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase }
+    </style>
+
+    <!--
+      Deployment notes (read me!)
+      ---------------------------------------------
+      Place a JSON file next to this HTML (same folder) named: broshadow_stats.json
+      Example schema this page expects:
+      {
+        "repo": "zionrubin/broshadow",
+        "since": "2025-10-01T00:00:00Z",
+        "commits": 128,
+        "changes": { "added": 5421, "modified": 211, "removed": 3179 },
+        "contributors": 2,
+        "latest_commit": {
+          "sha": "abcd1234",
+          "message": "refactor: agent bus + docs",
+          "author": "Zion Rubin",
+          "date": "2025-10-29T13:22:41Z"
+        },
+        "summary": "Agentic messaging core taking shape: channel model, personal agents, and workspace bots wired."
+      }
+      An external job can keep this file up to date by querying the private repo and pushing it into the public 'bro' GitHub Pages branch.
+    -->
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="orb" aria-hidden="true"></div>
+
+      <div class="card">
+        <div class="ribbon">coming&nbsp;soon</div>
+        <div class="header">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>Bro</h1>
+            <div class="tag">Agent‑first Messaging</div>
+          </div>
+        </div>
+
+        <div class="hero">
+          <div class="title">We're shipping something new.</div>
+          <p class="subtitle">Live build stats stream in from our private workspace (<span class="mono">broshadow</span>). Peek at the momentum while we polish the experience.</p>
+        </div>
+
+        <section class="stats" id="stats">
+          <div class="stat">
+            <div class="label">Commits</div>
+            <div class="value mono" id="commits">—</div>
+            <div class="meta" id="since">since —</div>
+          </div>
+          <div class="stat">
+            <div class="label">Lines Changed</div>
+            <div class="value mono" id="lines">—</div>
+            <div class="meta" id="files">added • modified • removed</div>
+          </div>
+          <div class="stat">
+            <div class="label">Contributors</div>
+            <div class="value mono" id="contributors">—</div>
+            <div class="meta">core team & bots</div>
+          </div>
+        </section>
+
+        <section class="commit" id="commit">
+          <div class="label">Latest Commit</div>
+          <div class="meta" id="commit-meta">—</div>
+          <div id="commit-msg" style="margin-top:6px">Fetching…</div>
+        </section>
+
+        <div class="footer">
+          <div class="pill"><span class="blink">●</span> <span id="status">Awaiting stats…</span></div>
+          <div class="pill"><a class="link" href="https://github.com/zionrubin/bro" target="_blank" rel="noopener">View public repo</a></div>
+        </div>
+      </div>
+
+      <div class="noise" aria-hidden="true"></div>
+    </div>
+
+    <script>
+      // Small helpers
+      const $ = (id) => document.getElementById(id);
+      const fmtNum = (n) => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+      const fmtDate = (iso) => new Date(iso).toLocaleString(undefined, { year:'numeric', month:'short', day:'2-digit' });
+
+      // Count-up animation for nice vibes
+      function countTo(el, target, ms = 900) {
+        const start = performance.now();
+        const from = 0;
+        function step(t) {
+          const p = Math.min(1, (t - start) / ms);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const val = Math.round(from + (target - from) * eased);
+          el.textContent = fmtNum(val);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      async function loadStats() {
+        const statusEl = $("status");
+        try {
+          const res = await fetch('./broshadow_stats.json', { cache: 'no-store' });
+          if (!res.ok) throw new Error('stats not found');
+          const data = await res.json();
+
+          // Commits
+          countTo($("commits"), Number(data.commits || 0));
+          $("since").textContent = `since ${data.since ? fmtDate(data.since) : 'project start'}`;
+
+          // Lines changed
+          const a = Number(data?.changes?.added || 0);
+          const m = Number(data?.changes?.modified || 0);
+          const r = Number(data?.changes?.removed || 0);
+          const total = a + m + r;
+          countTo($("lines"), total);
+          $("files").textContent = `${fmtNum(a)} added • ${fmtNum(m)} modified • ${fmtNum(r)} removed`;
+
+          // Contributors
+          countTo($("contributors"), Number(data.contributors || 1));
+
+          // Latest commit
+          const lc = data.latest_commit || {};
+          const sha = (lc.sha || '').slice(0,7);
+          $("commit-meta").innerHTML = `<span class="mono">${sha || '———'}</span> • ${lc.author || '—'} • ${lc.date ? fmtDate(lc.date) : '—'}`;
+          $("commit-msg").textContent = lc.message || (data.summary || 'Cooking…');
+
+          statusEl.textContent = `Last updated ${new Date().toLocaleTimeString()}`;
+        } catch (e) {
+          // Graceful empty state when JSON isn't there yet
+          $("commits").textContent = '0';
+          $("lines").textContent = '0';
+          $("contributors").textContent = '1';
+          $("commit-msg").textContent = 'Stats file not found yet. Stay tuned.';
+          $("commit-meta").textContent = '—';
+          $("since").textContent = 'since —';
+          $("files").textContent = '— added • — modified • — removed';
+          $("status").textContent = 'Waiting for first stats push…';
+        }
+      }
+
+      loadStats();
+      // Optional: light auto-refresh in case the JSON gets updated while the page is open
+      setInterval(loadStats, 60000); // refresh every 60s
+    </script>
+  </body>
+</html>
+
