@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T11:18:59.091Z",
-  "commits": 13,
+  "since": "2025-10-02T13:43:28.972Z",
+  "commits": 14,
   "changes": {
-    "added": 188112,
-    "modified": 148,
+    "added": 190423,
+    "modified": 173,
     "removed": 19039
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "9832a90982b0b62e95f96e61279c79cdc3404e0a",
-    "message": "Refactor channel member repository to use memberships table and include workspace_id",
+    "sha": "a0ac1d9f7030d1a94f9c91889576402ce7dfad30",
+    "message": "feat(tests): add unit tests for MCP server HTTP endpoints and workspace service integration",
     "author": "zr",
-    "date": "2025-11-01T13:18:45+02:00"
+    "date": "2025-11-01T15:43:17+02:00"
   },
-  "summary": "13 commits across 2 contributors in the last 30 days"
+  "summary": "14 commits across 2 contributors in the last 30 days"
 }
