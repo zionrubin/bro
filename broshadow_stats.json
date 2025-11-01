@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T13:46:17.398Z",
-  "commits": 15,
+  "since": "2025-10-02T14:21:33.927Z",
+  "commits": 16,
   "changes": {
-    "added": 190464,
-    "modified": 173,
-    "removed": 19039
+    "added": 190495,
+    "modified": 193,
+    "removed": 19044
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "741c58c01c7583c48fe136dcd5d3c82c285441cd",
-    "message": "feat(ci): add GitHub Actions workflow for MCP server tests",
+    "sha": "f52402cf88f4101814556e06963abaa2529c772f",
+    "message": "feat(user): enhance error handling and remove email field from user entity",
     "author": "zr",
-    "date": "2025-11-01T15:46:05+02:00"
+    "date": "2025-11-01T16:21:21+02:00"
   },
-  "summary": "15 commits across 2 contributors in the last 30 days"
+  "summary": "16 commits across 2 contributors in the last 30 days"
 }
