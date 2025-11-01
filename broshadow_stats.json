@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T13:43:28.972Z",
-  "commits": 14,
+  "since": "2025-10-02T13:46:17.398Z",
+  "commits": 15,
   "changes": {
-    "added": 190423,
+    "added": 190464,
     "modified": 173,
     "removed": 19039
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "a0ac1d9f7030d1a94f9c91889576402ce7dfad30",
-    "message": "feat(tests): add unit tests for MCP server HTTP endpoints and workspace service integration",
+    "sha": "741c58c01c7583c48fe136dcd5d3c82c285441cd",
+    "message": "feat(ci): add GitHub Actions workflow for MCP server tests",
     "author": "zr",
-    "date": "2025-11-01T15:43:17+02:00"
+    "date": "2025-11-01T15:46:05+02:00"
   },
-  "summary": "14 commits across 2 contributors in the last 30 days"
+  "summary": "15 commits across 2 contributors in the last 30 days"
 }
