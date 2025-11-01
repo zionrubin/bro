@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T11:03:20.525Z",
-  "commits": 12,
+  "since": "2025-10-02T11:18:59.091Z",
+  "commits": 13,
   "changes": {
-    "added": 188085,
-    "modified": 120,
+    "added": 188112,
+    "modified": 148,
     "removed": 19039
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "3f1c9e8efa1675b7dc170ce90d9c154a9d373550",
-    "message": "Add user management tools and database migrations for workspace ownership",
+    "sha": "9832a90982b0b62e95f96e61279c79cdc3404e0a",
+    "message": "Refactor channel member repository to use memberships table and include workspace_id",
     "author": "zr",
-    "date": "2025-11-01T13:03:06+02:00"
+    "date": "2025-11-01T13:18:45+02:00"
   },
-  "summary": "12 commits across 2 contributors in the last 30 days"
+  "summary": "13 commits across 2 contributors in the last 30 days"
 }
