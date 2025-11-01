@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T06:57:07.882Z",
-  "commits": 11,
+  "since": "2025-10-02T11:03:20.525Z",
+  "commits": 12,
   "changes": {
-    "added": 187257,
-    "modified": 5,
-    "removed": 19002
+    "added": 188085,
+    "modified": 120,
+    "removed": 19039
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "e6991c1f4ed1e8ac5953a0eb80adbb159dda1118",
-    "message": "update github actions",
-    "author": "Zion Rubin",
-    "date": "2025-11-01T08:56:54+02:00"
+    "sha": "3f1c9e8efa1675b7dc170ce90d9c154a9d373550",
+    "message": "Add user management tools and database migrations for workspace ownership",
+    "author": "zr",
+    "date": "2025-11-01T13:03:06+02:00"
   },
-  "summary": "11 commits across 2 contributors in the last 30 days"
+  "summary": "12 commits across 2 contributors in the last 30 days"
 }
