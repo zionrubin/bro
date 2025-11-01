@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T14:21:33.927Z",
-  "commits": 16,
+  "since": "2025-10-02T16:45:10.870Z",
+  "commits": 17,
   "changes": {
-    "added": 190495,
+    "added": 192628,
     "modified": 193,
     "removed": 19044
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "f52402cf88f4101814556e06963abaa2529c772f",
-    "message": "feat(user): enhance error handling and remove email field from user entity",
+    "sha": "2d652c9f4d61a3d8341b0bf37506a66f4e2973e4",
+    "message": "feat: implement database client and queries for user workspaces and channels",
     "author": "zr",
-    "date": "2025-11-01T16:21:21+02:00"
+    "date": "2025-11-01T18:44:59+02:00"
   },
-  "summary": "16 commits across 2 contributors in the last 30 days"
+  "summary": "17 commits across 2 contributors in the last 30 days"
 }
