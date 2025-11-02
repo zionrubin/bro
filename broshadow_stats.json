@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-02T18:35:01.141Z",
-  "commits": 18,
+  "since": "2025-10-03T07:56:56.430Z",
+  "commits": 20,
   "changes": {
-    "added": 193118,
-    "modified": 244,
+    "added": 205532,
+    "modified": 446,
     "removed": 19044
   },
   "contributors": 2,
   "latest_commit": {
-    "sha": "68cc989cd102c27797e7863dcf58b002b0452758",
-    "message": "feat: add MCP server support for data access and update configuration options",
+    "sha": "ad5738ed5f8c0492719dcb7179105b60a024f96d",
+    "message": "feat: Implement repository interfaces and PostgreSQL implementations for agent memory, messages, conversations, and preferences",
     "author": "zr",
-    "date": "2025-11-01T20:32:59+02:00"
+    "date": "2025-11-02T09:56:41+02:00"
   },
-  "summary": "18 commits across 2 contributors in the last 30 days"
+  "summary": "20 commits across 2 contributors in the last 30 days"
 }
