@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-03T08:41:44.645Z",
-  "commits": 21,
+  "since": "2025-10-04T21:06:41.024Z",
+  "commits": 23,
   "changes": {
-    "added": 205532,
-    "modified": 451,
-    "removed": 19044
+    "added": 210305,
+    "modified": 1527,
+    "removed": 164526
   },
-  "contributors": 2,
+  "contributors": 3,
   "latest_commit": {
-    "sha": "5dc9abeca965cc9ba10e670df92e24e74c899659",
-    "message": "Perfect Agent",
+    "sha": "77ba2655c083e5e3f53dad7ccc2fce7eb8f2ff9b",
+    "message": "Merge pull request #3 from zionrubin/liran/broshadow",
     "author": "zr",
-    "date": "2025-11-02T10:41:33+02:00"
+    "date": "2025-11-03T23:06:31+02:00"
   },
-  "summary": "21 commits across 2 contributors in the last 30 days"
+  "summary": "23 commits across 3 contributors in the last 30 days"
 }
