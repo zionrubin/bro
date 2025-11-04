@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-04T21:06:41.024Z",
-  "commits": 23,
+  "since": "2025-10-05T16:45:49.244Z",
+  "commits": 24,
   "changes": {
-    "added": 210305,
-    "modified": 1527,
-    "removed": 164526
+    "added": 211289,
+    "modified": 1655,
+    "removed": 180232
   },
   "contributors": 3,
   "latest_commit": {
-    "sha": "77ba2655c083e5e3f53dad7ccc2fce7eb8f2ff9b",
-    "message": "Merge pull request #3 from zionrubin/liran/broshadow",
+    "sha": "31a80f68fa0de2d5939d6d45606e477da89049ac",
+    "message": "Remove workspace tools and related configurations from mcp-server",
     "author": "zr",
-    "date": "2025-11-03T23:06:31+02:00"
+    "date": "2025-11-04T18:45:33+02:00"
   },
-  "summary": "23 commits across 3 contributors in the last 30 days"
+  "summary": "24 commits across 3 contributors in the last 30 days"
 }
