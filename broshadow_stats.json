@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-12T19:14:24.088Z",
-  "commits": 46,
+  "since": "2025-10-12T19:15:37.238Z",
+  "commits": 47,
   "changes": {
     "added": 221569,
     "modified": 3281,
-    "removed": 206073
+    "removed": 206172
   },
   "contributors": 3,
   "latest_commit": {
-    "sha": "ae3669021a7908a8d748b9357a15cf91b7589a98",
+    "sha": "94ddf5cae3a725857042ca386ea9988abf818d0f",
     "message": "Broterm restructure",
     "author": "Liran Menashe",
-    "date": "2025-11-11T21:14:12+02:00"
+    "date": "2025-11-11T21:15:14+02:00"
   },
-  "summary": "46 commits across 3 contributors in the last 30 days"
+  "summary": "47 commits across 3 contributors in the last 30 days"
 }
