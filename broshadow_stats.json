@@ -1,18 +1,18 @@
 {
   "repo": "zionrubin/broshadow",
-  "since": "2025-10-05T16:45:49.244Z",
-  "commits": 24,
+  "since": "2025-10-12T18:01:06.753Z",
+  "commits": 44,
   "changes": {
-    "added": 211289,
-    "modified": 1655,
-    "removed": 180232
+    "added": 221567,
+    "modified": 3275,
+    "removed": 184322
   },
   "contributors": 3,
   "latest_commit": {
-    "sha": "31a80f68fa0de2d5939d6d45606e477da89049ac",
-    "message": "Remove workspace tools and related configurations from mcp-server",
-    "author": "zr",
-    "date": "2025-11-04T18:45:33+02:00"
+    "sha": "c175450da53f42d7ce36a67a550e2683dcf8b18c",
+    "message": "broterm notifications",
+    "author": "Liran Menashe",
+    "date": "2025-11-11T20:00:10+02:00"
   },
-  "summary": "24 commits across 3 contributors in the last 30 days"
+  "summary": "44 commits across 3 contributors in the last 30 days"
 }
